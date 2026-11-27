@@ -1,114 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eric Edward Loftus | Operations & Hospitality</title>
-    <script src="https://unpkg.com"></script>
-    <style>
-        body { background-color: #0f172a; color: #f8fafc; font-family: sans-serif; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet Eric Edward Loftus: Oakland-based hospitality and event support professional with seasonal bartending experience, a hands-on trades background, and current California Food Handler and RBS credentials.">
+  <meta name="theme-color" content="#183c33">
+  <title>Eric Edward Loftus | Hospitality & Event Support</title>
+  <style>
+    :root { color-scheme: light; --paper:#f8f6ef; --ink:#1d302a; --muted:#526159; --green:#183c33; --line:#d9ded4; --accent:#e8bd73; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:24px; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { color:inherit; text-underline-offset:4px; }
+    a:hover { text-decoration-thickness:2px; }
+    a:focus-visible,summary:focus-visible { outline:3px solid #98600d; outline-offset:5px; }
+    .skip { position:absolute; left:16px; top:-100px; z-index:5; background:white; padding:12px; }
+    .skip:focus { top:12px; }
+    .wrap { width:min(1080px,calc(100% - 64px)); margin:auto; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:25px 0; border-bottom:1px solid var(--line); }
+    .wordmark { text-decoration:none; font-size:14px; font-weight:800; letter-spacing:.12em; }
+    nav { display:flex; flex-wrap:wrap; gap:24px; font-size:13px; font-weight:650; }
+    nav a { text-decoration:none; }
+    .hero { display:grid; grid-template-columns:1.55fr 1fr; gap:64px; padding:76px 0 68px; align-items:center; }
+    .eyebrow { display:block; margin:0 0 18px; color:var(--muted); font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { font-family:Georgia,"Times New Roman",serif; font-weight:400; font-size:clamp(46px,6vw,74px); letter-spacing:-.055em; line-height:1.04; margin-bottom:24px; }
+    h1 span { display:block; }
+    .intro { color:var(--muted); max-width:520px; font-size:18px; line-height:1.7; margin-bottom:24px; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; }
+    .button { display:inline-flex; justify-content:center; align-items:center; min-height:48px; padding:11px 19px; border:1px solid var(--green); border-radius:5px; font-size:13px; font-weight:750; text-decoration:none; background:var(--green); color:white; }
+    .button:hover { background:#285649; }
+    .button.secondary { background:transparent; color:var(--green); }
+    .button.secondary:hover { background:#e9eee6; }
+    .contact-line { margin:16px 0 0; color:var(--muted); font-size:12px; overflow-wrap:anywhere; }
+    .contact-line a { display:inline-block; padding:6px 0; }
+    .hero-card { position:relative; padding:34px; background:var(--green); color:#f8f6ef; border-radius:8px; }
+    .hero-card:before { content:""; display:block; width:42px; height:4px; background:var(--accent); margin-bottom:32px; }
+    .hero-card .eyebrow { color:#d6dfd4; margin-bottom:14px; }
+    .hero-card h2 { font:400 32px/1.22 Georgia,serif; letter-spacing:-.02em; margin-bottom:26px; }
+    .hero-card ul { list-style:none; padding:0; margin:0; }
+    .hero-card li { padding:12px 0; border-top:1px solid #4e6b5f; font-size:13px; }
+    .hero-card li:last-child { padding-bottom:0; }
+    .hero-card strong { color:var(--accent); font-size:11px; letter-spacing:.08em; margin-right:8px; }
+    .section { padding:50px 0; border-top:1px solid var(--line); }
+    .section-title { display:flex; justify-content:space-between; align-items:baseline; gap:24px; margin-bottom:26px; }
+    .section-title h2 { font:400 32px/1.2 Georgia,serif; letter-spacing:-.025em; margin:0; }
+    .section-title .eyebrow { margin:0; }
+    .credentials { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .credential { border:1px solid var(--line); border-radius:6px; background:#fffefa; padding:25px; }
+    .tag { display:inline-block; padding:3px 9px; margin-bottom:18px; background:#e8eee3; color:#244b35; font-size:10px; font-weight:800; letter-spacing:.07em; text-transform:uppercase; border-radius:3px; }
+    h3 { font-size:16px; line-height:1.4; margin-bottom:8px; }
+    .credential p { color:var(--muted); font-size:13px; margin-bottom:14px; }
+    .credential .detail { font-size:11px; margin-bottom:0; }
+    .note { font-size:12px; color:var(--muted); margin:18px 0 0; }
+    .video-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .video-card { border:1px solid var(--line); border-radius:6px; overflow:hidden; }
+    .video-placeholder { min-height:180px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; background:#e9ede5; padding:24px; }
+    .video-placeholder svg { width:36px; height:36px; color:#4d6757; }
+    .video-placeholder span { font-size:10px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#43594a; }
+    .video-copy { padding:22px; }
+    .video-copy p { font-size:13px; color:var(--muted); margin:0; }
+    .experience-grid { display:grid; grid-template-columns:1fr 2fr; gap:60px; }
+    .experience-intro p { color:var(--muted); font-size:14px; }
+    .experience-intro h2 { font:400 34px/1.2 Georgia,serif; letter-spacing:-.03em; }
+    .job { padding:0 0 24px; margin-bottom:24px; border-bottom:1px solid var(--line); }
+    .job:last-child { border:0; margin-bottom:0; padding-bottom:0; }
+    .job .date { color:var(--muted); font-size:11px; font-weight:650; margin-bottom:6px; }
+    .job p { color:var(--muted); font-size:13px; margin-bottom:0; }
+    details { margin-top:24px; border-top:1px solid var(--line); padding-top:18px; }
+    summary { cursor:pointer; font-size:13px; font-weight:700; padding:4px 0; }
+    details p { padding-top:12px; }
+    .contact-panel { background:var(--green); border-radius:8px; padding:40px; color:var(--paper); display:flex; justify-content:space-between; align-items:center; gap:28px; }
+    .contact-panel h2 { font:400 32px/1.2 Georgia,serif; margin:0 0 8px; }
+    .contact-panel p { color:#d6dfd4; font-size:13px; margin:0; }
+    .contact-panel .button { background:var(--accent); border-color:var(--accent); color:var(--green); white-space:nowrap; }
+    .contact-panel .button:hover { background:#f1cf94; }
+    footer { padding:28px 0 40px; font-size:11px; color:var(--muted); display:flex; justify-content:space-between; gap:20px; }
+    @media(max-width:760px) {
+      .wrap { width:calc(100% - 40px); }
+      .hero { grid-template-columns:1fr; gap:32px; padding:44px 0; }
+      .hero-card { padding:28px; }
+      .hero-card:before { margin-bottom:20px; }
+      .credentials { grid-template-columns:1fr; }
+      .credential { padding:22px; }
+      .tag { margin-bottom:12px; }
+      .section { padding:36px 0; }
+      .section-title { display:block; }
+      .section-title .eyebrow { margin-bottom:10px; }
+      .video-grid,.experience-grid { grid-template-columns:1fr; gap:20px; }
+      .experience-intro h2 { margin-bottom:16px; }
+      .contact-panel { flex-direction:column; align-items:stretch; padding:28px; }
+      .topbar { align-items:flex-start; gap:12px; }
+      nav { gap:14px; font-size:12px; }
+      footer { flex-direction:column; gap:5px; }
+    }
+    @media(max-width:380px) { .topbar { flex-direction:column; } .actions .button { flex:1 1 100%; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+    @media print {
+      body { background:white; color:black; }
+      .wrap { width:100%; }
+      nav,.actions,.video-grid,.contact-panel,.skip { display:none; }
+      .hero { padding:20px 0; gap:24px; }
+      .hero-card { background:white; color:black; border:1px solid #999; }
+      .hero-card .eyebrow,.hero-card strong { color:black; }
+      .section { padding:20px 0; }
+      .credential,.job { break-inside:avoid; }
+    }
+  </style>
 </head>
-<body class="bg-slate-900 text-slate-100 antialiased min-h-screen pb-12">
-
-    <!-- Hero Header -->
-    <header class="border-b border-slate-800 bg-slate-950 p-5 max-w-2xl mx-auto w-full rounded-b-2xl shadow-xl">
-        <h1 class="text-3xl font-extrabold tracking-tight text-amber-400">
-            Eric Edward Loftus
-        </h1>
-        <p class="text-slate-400 font-medium mt-1">Operations & Hospitality Specialist</p>
-        <p class="text-xs text-slate-500 flex items-center gap-1 mt-1">📍 Oakland, CA</p>
-        
-        <!-- Quick Contact Buttons -->
-        <div class="grid grid-cols-2 gap-3 mt-4">
-            <a href="tel:4159618382" class="flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition shadow-lg">
-                📞 Call / Text
-            </a>
-            <a href="mailto:ericloftus1@gmail.com" class="flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold py-3 px-4 rounded-xl text-center text-sm transition border border-slate-700">
-                ✉️ Email Me
-            </a>
-        </div>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Eric Loftus home">ERIC LOFTUS</a>
+      <nav aria-label="Main navigation">
+        <a href="#credentials">Credentials</a>
+        <a href="#videos">Videos</a>
+        <a href="#experience">Experience</a>
+      </nav>
     </header>
-
-    <main class="max-w-2xl mx-auto px-4 py-6 space-y-6">
-        
-        <!-- Verified Credentials Section -->
-        <section class="bg-slate-950 border border-slate-800 rounded-2xl p-4 shadow-md">
-            <h2 class="text-xs font-semibold text-amber-400 uppercase tracking-wider mb-3">
-                🛡️ Verified Industry Compliance
-            </h2>
-            <div class="space-y-3">
-                
-                <!-- Food Handler -->
-                <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
-                        <div>
-                            <p class="text-sm font-bold text-slate-200">California Food Handlers Certificate</p>
-                            <p class="text-xs text-slate-400 mt-0.5">StateFoodSafety • ANAB Accredited #1020</p>
-                            <div class="text-[11px] font-mono text-emerald-400 bg-emerald-950/50 border border-emerald-900/50 inline-block px-2 py-0.5 rounded mt-2">
-                                ID: 297218-ki0fhgi
-                            </div>
-                        </div>
-                        <span class="text-xs text-slate-500 font-medium">Issued 2026</span>
-                    </div>
-                </div>
-
-                <!-- Levy Orientation -->
-                <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
-                        <div>
-                            <p class="text-sm font-bold text-slate-200">Levy Professional Orientation</p>
-                            <p class="text-xs text-slate-400 mt-0.5">Premium Hospitality & Culture Training</p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 mt-3 pt-3 border-t border-slate-800 text-[11px] text-slate-400">
-                                <div>• Responsible Alcohol Service</div>
-                                <div>• Food Safety & Sanitation</div>
-                                <div>• OSHA Bloodborne Pathogens</div>
-                                <div>• HAZCOM Compliance</div>
-                            </div>
-                        </div>
-                        <span class="text-xs text-slate-500 font-medium">Issued 2026</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Video Proof Section -->
-        <section class="bg-slate-950 border border-slate-800 rounded-2xl p-4 shadow-md">
-            <h2 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4">
-                🎥 Skill Assessment Videos
-            </h2>
-            <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-sm">
-                <div class="relative aspect-video bg-slate-950">
-                    <video src="https://w3schools.com" controls playsinline preload="metadata" class="w-full h-full object-cover"></video>
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-slate-200 text-sm">Jigger & Precision Pouring</h3>
-                    <p class="text-xs text-slate-400 mt-1">Consistent 4-count free pours and accurate jigger measurements.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section class="bg-slate-950 border border-slate-800 rounded-2xl p-4 shadow-md">
-            <h2 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4">
-                💼 Work History Highlights
-            </h2>
-            <div class="space-y-4 border-l-2 border-slate-800 pl-4 ml-1">
-                <div>
-                    <h3 class="text-sm font-bold text-slate-200">Independent Operations Specialist</h3>
-                    <p class="text-xs text-slate-400">Northern California | 2021 – Present</p>
-                    <p class="text-xs text-slate-500 mt-1">Utilizing digital marketplaces for high-volume stadium, arena, and FOH event logistics alongside trade contracting.</p>
-                </div>
-                <div>
-                    <h3 class="text-sm font-bold text-slate-300">Dog Time Stay and Play</h3>
-                    <p class="text-xs text-slate-500">Dog Handler & Facilities Support | 2024 – July 2026</p>
-                </div>
-                <div>
-                    <h3 class="text-sm font-bold text-slate-300">Vineyard Operations Contractor</h3>
-                    <p class="text-xs text-slate-500">Wine Knot, Cabot & Hoopa Vineyards | 2014 – 2021</p>
-                </div>
-            </div>
-        </section>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Oakland, California · Hospitality & event support</p>
+          <h1 id="hero-title"><span>Eric Edward</span> Loftus.</h1>
+          <p class="intro">Hands-on experience.<br>A practical approach to hospitality.</p>
+          <p class="intro" style="font-size:15px">Contract hospitality and event support, earlier bartending experience, and a background in trades. Ready to bring a safety-minded, adaptable approach to your team.</p>
+          <div class="actions">
+            <a class="button" href="assets/Eric-Loftus-Resume.pdf" download>Download resume <span aria-hidden="true">&nbsp;↓</span></a>
+            <a class="button secondary" href="mailto:ericloftus1@gmail.com">Email Eric</a>
+            <a class="button secondary" href="tel:+14159618382">Call Eric</a>
+          </div>
+          <p class="contact-line"><a href="mailto:ericloftus1@gmail.com">ericloftus1@gmail.com</a> &nbsp;·&nbsp; <a href="tel:+14159618382">415-961-8382</a></p>
+        </div>
+        <aside class="hero-card" aria-label="At a glance">
+          <p class="eyebrow">A useful pair of hands</p>
+          <h2>From the worksite<br>to the service floor.</h2>
+          <ul>
+            <li><strong>01</strong> Hospitality & event-support shifts</li>
+            <li><strong>02</strong> Beer & shot service experience</li>
+            <li><strong>03</strong> Trades & facilities maintenance</li>
+            <li><strong>04</strong> Current CA Food Handler & RBS</li>
+          </ul>
+        </aside>
+      </section>
+      <section class="section" id="credentials" aria-labelledby="credentials-title">
+        <div class="section-title"><p class="eyebrow">Prepared for the shift</p><h2 id="credentials-title">Credentials & training</h2></div>
+        <div class="credentials">
+          <article class="credential">
+            <span class="tag">Current credential</span>
+            <h3>California Food Handler</h3>
+            <p>Food safety training through StateFoodSafety.</p>
+            <p class="detail">Issued September 9, 2026<br>Valid for three years from issue</p>
+          </article>
+          <article class="credential">
+            <span class="tag">Current credential</span>
+            <h3>Responsible Beverage Service</h3>
+            <p>California ABC RBS certification.</p>
+            <p class="detail">Certified status<br>Expires September 10, 2029</p>
+          </article>
+          <article class="credential">
+            <span class="tag">Completed training</span>
+            <h3>Levy orientation</h3>
+            <p>Hospitality, food safety & sanitation, bloodborne pathogens/HAZCOM, and responsible alcohol service.</p>
+            <p class="detail">Completed September 10, 2026</p>
+          </article>
+        </div>
+        <p class="note">Credential and training documentation available to employers on request.</p>
+      </section>
+      <section class="section" id="videos" aria-labelledby="videos-title">
+        <div class="section-title"><p class="eyebrow">See the work</p><h2 id="videos-title">Skills in practice</h2></div>
+        <div class="video-grid">
+          <article class="video-card">
+            <div class="video-placeholder"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 5h14v7a7 7 0 0 1-14 0V5ZM16 19v8M11 27h10M9 10h14"/></svg><span>Video coming soon</span></div>
+            <div class="video-copy"><h3>Pouring practice</h3><p>A planned demonstration of free-pouring and jigger measurements, using water for practice.</p></div>
+          </article>
+          <article class="video-card">
+            <div class="video-placeholder"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 8h22v5H5zM7 13v14M25 13v14M7 21h18M10 5v3M16 3v5M22 5v3"/></svg><span>Video coming soon</span></div>
+            <div class="video-copy"><h3>Bar station setup</h3><p>A planned look at arranging tools and supplies for a clean, organized workstation.</p></div>
+          </article>
+        </div>
+        <p class="note">New footage will be added here. If you arrived from my resume’s QR code, you’re in the right place.</p>
+      </section>
+      <section class="section experience-grid" id="experience" aria-labelledby="experience-title">
+        <div class="experience-intro">
+          <p class="eyebrow">A hands-on background</p>
+          <h2 id="experience-title">Practical skills.<br>Transferable experience.</h2>
+          <p>Hospitality shifts backed by years of physical work, troubleshooting, sanitation, and teamwork.</p>
+          <a href="assets/Eric-Loftus-Resume.pdf">View full resume (PDF) <span aria-hidden="true">↗</span></a>
+        </div>
+        <div>
+          <article class="job"><p class="date">2025–Present · Contract shifts</p><h3>Hospitality & event support</h3><p>Independent contractor performing hospitality and event-support assignments through shift work.</p></article>
+          <article class="job"><p class="date">2024–July 2026 · Dog Time Stay and Play</p><h3>Dog handler</h3><p>Maintained a safe, structured environment for up to 25 large dogs. Monitored behavior and carried out janitorial and grooming duties.</p></article>
+          <article class="job"><p class="date">2014–2023 · Northern California</p><h3>Construction & vineyard operations</h3><p>Independent construction projects, vineyard structures, groundskeeping, irrigation, and property maintenance. Work included Wine Knot, Cabot, and Hoopa Vineyards.</p></article>
+          <article class="job"><p class="date">Winters, 2007–2012 · Sterling, Illinois</p><h3>Earlier seasonal bartending</h3><p>Served beer and shots in local bars during winter seasons. Comfortable with free-pouring and jigger measurements; continuing to build cocktail knowledge.</p></article>
+          <details><summary>Earlier trades & education</summary><p>General labor with Best Bet Construction (2012–2014) and Loftus Construction (2008–2012); landscaping with RKR Landscaping (2006–2008). GED, Lincoln’s Challenge Academy, Rantoul, Illinois (2003).</p></details>
+        </div>
+      </section>
+      <section class="section" aria-labelledby="contact-title">
+        <div class="contact-panel"><div><h2 id="contact-title">Let’s talk about your team.</h2><p>Get in touch about hospitality, bar support, or event work in the Bay Area.</p></div><a class="button" href="mailto:ericloftus1@gmail.com?subject=Hospitality%20opportunity">Get in touch <span aria-hidden="true">&nbsp;↗</span></a></div>
+      </section>
     </main>
+    <footer><span>Eric Edward Loftus · Oakland, CA</span><span>Hospitality & event support · Hands-on operations</span></footer>
+  </div>
 </body>
 </html>
